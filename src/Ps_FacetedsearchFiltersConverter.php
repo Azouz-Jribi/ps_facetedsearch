@@ -40,6 +40,9 @@ class Ps_FacetedsearchFiltersConverter
                             ->setMagnitude($filterArray['nbr'])
                             ->setValue($id)
                         ;
+                        if('category' == $facetArray['type']){
+                            $filter->setActive(); 
+                        }
                         if (isset($filterArray['color']) && $filterArray['color'] != '') {
                             $filter->setProperty('color', $filterArray['color']);
                         }
